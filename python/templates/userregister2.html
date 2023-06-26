@@ -1,0 +1,119 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <link rel="stylesheet" href="static/register1.css">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   
+    <meta name="theme-color" content="rgb(11, 78, 179)">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="../i/f/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>One Step Process</title>
+    <style>
+      
+    </style>
+  </head>
+
+  <body>
+    <form action="/userregister2" class="form" method="POST" enctype="multipart/form-data">
+      
+      <h1 class="text-center">Register  <span style="color: #ef6d6d">Your Health records</span></h1>
+ 
+
+
+      <!-- Steps -->
+
+      <!-- 1 -->
+      <div class="form-step form-step-active">
+        <div class="input-group">
+          <input type="number" name="uheight" id="tname" placeholder="userheight" step="0.5"/>
+        </div>
+        <div class="input-group">
+          <input type="number" name="uweight" id="tmail" placeholder="userweight" step="0.5"/>
+        </div>
+        <div class="input-group">
+          <label for="one">Has undergone surgery</label><br><br>
+          <div class="radio-buttons">
+            <label>
+              <input type="radio" name="usurgery" value="yes" id="one"> Yes
+            </label>
+            <label>
+              <input type="radio" name="usurgery" value="no" id="one"> No
+            </label>
+          </div>
+        </div>
+        
+      <div class="input-group">
+        <label for="one">Has Allergic Conditions</label><br><br>
+        <div class="radio-buttons">
+          <label>
+            <input type="radio" name="uallergy" value="yes" id="one">Yes
+        </label>
+        <label>
+            <input type="radio" name="uallergy" value="no" id="one">No
+        </label>
+      </div>
+      </div>
+      <div class="input-group">
+          <label for="one">Suffering from chronic conditions</label>
+          <div class="radio-buttons">
+          <label>
+            <input type="radio" name="uchronic" value="yes" id="one">Yes
+          </label>
+          <label>
+            <input type="radio" name="uchronic" value="no" id="one">No
+          </label>  
+          </div>        
+      </div>
+
+      <div class="input-group">
+          <label for="one">Alcoholic consumption</label>
+          <div class="radio-buttons">
+          <label>
+            <input type="radio" name="ualcohol" value="yes" id="one">Yes
+          </label>
+          <label>
+            <input type="radio" name="ualcohol" value="no" id="one">No
+          </label>
+          </div>
+      </div>
+      <div class="form-step">
+        <div class="input-group">
+          <label for="one">Drug Addiction</label>
+          <div class="radio-buttons">
+          <label>
+            <input type="radio" name="udrug" value="yes" id="one">Yes
+          </label>
+          <label>
+            <input type="radio" name="udrug" value="no" id="one">No
+          </label>
+        </div>
+      </div>
+        <div class="input-group">
+          <label for="one">Tobacco Consumption</label>
+          <div class="radio-buttons">
+          <label>
+            <input type="radio" name="utobacco" value="yes" id="one">Yes
+          </label>
+          <label>
+            <input type="radio" name="utobacco" value="no" id="one">No
+          </label>
+         </div>
+        </div>
+      </div>
+      <div>
+          <button type="submit" class="register-button">Register</button>
+
+      </div>
+
+
+    </form>
+  </body>
+
+</html>

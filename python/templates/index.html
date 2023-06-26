@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.topnav {
+  overflow: hidden;
+  height: 60px;
+  background-color: #239f85;
+}
+.topnav a {
+  float: right;
+  display: block;
+  color: #DFE4E0;
+  text-align: center;
+  padding-left: 20px;
+  padding-right: 100px;
+  padding-top: 14px;
+  padding-bottom: 10px;
+  text-decoration: none;
+  font-size: 17px;
+}
+.topnav a:hover {
+  
+  border-bottom: 4px solid #ff5d22;
+}
+.topnav .hid
+{
+  display: none;
+}
+.topnav .icon {
+  display: none;
+}
+.topnav .logo{
+  padding: 4px;
+  float: left;
+}
+footer {
+  background-color: black;
+  color: white;
+  bottom: 0;
+  width: 100vw;
+  font-size: 16px;
+}
+footer * {
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+}
+.abt ul li{
+  
+font-family: 'Roboto', sans-serif;
+word-spacing: 0cqi;
+}
+@media screen and (max-width: 600px) {
+  
+  .topnav.responsive a:not(:first-child){
+    display: none;
+    
+  }
+  .topnav .hid
+  {  
+  display: block;
+  color: whitesmoke;
+  font-size:xx-large;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  
+  }
+  .topnav .logo {
+    display: block;
+  }
+  .topnav a:hover {
+  
+  border-bottom:none;
+  }
+}
+.area1 {
+  margin: 30px 20px 30px 20px;
+  display: flex;
+}
+.con {
+  margin-left: 2em;
+}
+.slogan
+{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: whitesmoke;
+  font-style: italic;
+  font-size: larger;
+  padding-left: 20px;
+  margin-top: 20px;
+}
+
+.bodypart {
+  display: flex;
+  justify-content: space-between;
+}
+
+.ser
+{
+  color: black;
+  font-family: sans-serif;
+  font-size: 50px;
+  margin-left: 200px;
+
+}
+.abt{
+  font-family: 'Poppins', sans-serif;
+  word-spacing: 5px;
+  font-size: 30px;
+  margin-right: 50px;
+  text-align: justify;
+}
+.service{
+  font-family:'Poppins',sans-serif ;
+  font-size: 50px;
+  margin-left: 20px;
+}
+.row {
+  display:flex;
+  justify-content: space-around;
+}
+
+ .column {
+  width: 20%;
+  justify-content: space-around;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.container {
+  padding: 0 16px;
+}
+
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: grey;
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+.row {
+  padding: 1em 1em;
+}
+.row.primary {
+  display: grid;
+  grid-template-columns: 3fr 2fr 4fr;
+  align-items: stretch;
+}
+.column {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0 2em;
+  min-height: 15em;
+}
+h3 {
+  width: 100%;
+  text-align: left;
+  color: white;
+  font-size: 1.4em;
+  white-space: nowrap;
+}
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+}
+li:not(:first-child) {
+  margin-top: 0.8em;
+}
+ul li a {
+  color: #a7a7a7;
+  text-decoration: none;
+}
+ul li a:hover {
+  color: #c7940a;
+}
+.about p {
+  text-align: justify;
+  line-height: 2;
+  margin: 0;
+}
+input,
+button {
+  font-size: 1em;
+  padding: 1em;
+  width: 100%;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+button {
+  background-color: #c7940a;
+  color: #ffffff;
+}
+div.social {
+  display: flex;
+  justify-content: space-around;
+  font-size: 2.4em;
+  flex-direction: row;
+  margin-top: 0.5em;
+}
+.social i {
+  color: #bac6d9;
+}
+@media screen and (max-width: 850px) {
+  .row.primary {
+    grid-template-columns: 1fr;
+  }
+}
+
+.button:hover {
+  background-color: #555;
+} 
+
+
+.area2 {
+  background: none;
+  padding: 20px;
+}
+
+.area2 h1 {
+  font-size: 32px;
+  color: black;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.area2 .step {
+  margin-bottom: 30px;
+}
+
+.area2 .step h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.area2 .step p {
+  font-size: 19px;
+  line-height: 1.5;
+  font-family: 'Roboto', sans-serif;
+}
+.step h3 {
+  font-family: 'Times New Roman', Times, serif;
+  color: black;
+}
+.card1 {
+  font-family: 'Roboto',sans-serif;
+  font-size: 24px;
+  word-spacing: 2;
+}
+.button1 {
+  text-decoration: none;
+  font-size: 24px;
+  color:black;
+  font-weight: bold;
+
+}
+</style>
+    
+</head>
+<body bgcolor="#239f85">
+    <div class="topnav" id="myTopnav">
+        <a href="http://127.0.0.1:5000/feedback">Feedback</a>
+        {% if count == 'pat' %}
+        <a href="http://127.0.0.1:5000/search">Search</a>
+        {% endif %}
+        {% if count == 'doc' %}
+        <a href="http://127.0.0.1:5000/result">View Appointments</a>
+        {% elif count == 'pat' %}
+        <a href="http://127.0.0.1:5000/appointments">Book Appointments</a>
+        {% endif %}
+        
+        <a href="http://127.0.0.1:5000/">Home</a>
+        {% if count == 'pat' %}
+        <a href="http://127.0.0.1:5000/profile">Profile</a>
+    {% elif count == 'doc' %}
+        <a href="http://127.0.0.1:5000/dprofile1">Profile</a>
+    {% endif %}
+        </a>    
+    </div>
+    <div class="area1">
+          <div class="im">
+             <img src="static\logo.png" width="300px" height="300px">
+          </div>
+          <div class="con">
+                <span class="ser">Our Services</span><br><br>
+                <span class="abt">
+                <ul>
+                  <li>Welcome to our website! Simplify your healthcare experience with our convenient services. Easily book appointments, assess your health using our tools, and receive personalized reports. Our user-friendly platform streamlines your healthcare management in one place. Join us today and take control of your well-being.</li>
+                
+                  
+                </ul>  
+                </span> 
+          </div>
+    </div>
+    <div class="area2">
+      <h1>How It Works</h1>
+      
+      <div class="step">
+        <h2>Step 1: Book an Appointment</h2>
+        <p>Use our easy-to-use appointment booking feature to schedule your visit. Choose a date, time, and healthcare provider that suits your availability.</p>
+      </div>
+      
+      <div class="step">
+        <h2>Step 2: Assess Your Health</h2>
+        <p>Utilize our health assessment tools to monitor and track important health metrics. Stay informed about your well-being and make informed decisions about your lifestyle and healthcare choices.</p>
+      </div>
+      
+      <div class="step">
+        <h2>Step 3: Receive Personalized Reports</h2>
+        <p>Our platform generates periodical reports that provide comprehensive insights into your health progress. Gain valuable information, identify trends, and receive personalized recommendations for improvement.</p>
+      </div>
+      
+      <div class="step">
+        <h2>Step 4: Seamless Healthcare Management</h2>
+        <p>Experience seamless healthcare management with our user-friendly platform. All your appointments, health assessments, and reports are conveniently accessible in one place, making it easier than ever to take control of your well-being.</p>
+      </div>
+    </div>
+    
+    <div class="gallery">
+         <span class="service">Tools We Offer</span><br><br>
+         <div class="row">
+           <div class="column">
+             
+                 <p class="card1">Our data visualization tools helps user to compare their parameter value with the ideal range and provides constructive report and based on need users are directed to appointments page </p>
+            
+             
+           </div>
+        
+        
+          <div class="column">
+             <div class="card">
+               <div class="container">
+                 <h2>Bubble Care</h2>
+                 <p><a class="button1" href="http://127.0.0.1:5000/button">Health assessment</a></p>
+               </div>
+             </div>
+          </div>
+        </div>
+  </div><br><br>
+    <div class="gallery">
+      </div>
+ </div>         
+ <footer>
+
+  <div class="row primary">
+    <div class="column about">
+        <h3>Connect</h3>
+        <p>
+            <i class="fa fa-map-marker" aria-hidden="true"></i> @Bubble  CEG campus,Anna university,Chennai
+        </p>
+        <div class="social">
+            <i class="fa fa-facebook-square"></i>
+            <i class="fa fa-twitter-square"></i>
+            <i class="fa fa-linkedin-square"></i>
+            <i class="fa fa-instagram"></i>
+        </div>
+    </div>
+
+    <div class="column link">
+        <h3>Links</h3>
+        <ul>
+            <li><a href="#home">Collaborate</a></li>
+            <li><a href="#team">Team</a></li>
+            <li><a href="#vision">Vision</a></li>
+        </ul>
+    </div>
+
+    <div class="column subscribe">
+        <h3>Newsletter</h3>
+        <div>
+           <input type="email" placeholder="Your email id here" />
+           <button>Subscribe</button>
+        </div>
+    </div>
+</div>
+
+
+ </footer>
+                
+</body>
+</html>

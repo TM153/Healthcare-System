@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="static/register1.css"/>
+        <meta charset="UTF-8"/>
+        <meta http-euiv="X-UA_Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="theme-color" content="rgb(11,78,179)">
+        <meta name="maspplication-Tilecolor" content="#ffffff">
+        <meta name="msapplication-Tilecolor" content="../i/f/ms-icon-144x144.png">
+        <meta name="theme-color" content="#ffffff">
+        <link href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css"  rel="'stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <title>doctor register details</title>
+        <style>
+
+        </style>
+        </head>
+        <body>
+            <form action="/dregister" class="form" method="POST" enctype="multiport/form-data">
+                <h1 class="text-center">Register  <span style="color: #ef6d6d">with us</span></h1>
+                
+                
+                <div class="form-step form-step-active">
+                    <div class="input-group">
+                        <input type="text" name="dname" id="dname" placeholder="Doctorname"/>  
+                </div>  
+                <div class="form-step form-step-active">
+                    <div class="input-group">
+                        <input type="text" name="dmail" id="dmail" placeholder="Email"/>  
+                </div>  
+                <div class="form-step form-step-active">
+                    <div class="input-group">
+                        <input type="number" name="dphone" id="dphone" placeholder="Contact number (+91)"/>  
+                </div>  
+                <div class="input-group">
+                    <select id="dgender" name="dgender" class="customdrop1">
+                        <option value="">-Select Gender-</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Transgender">Transgender</option>
+                    </select>
+                  </div>
+                  
+             <div class="input-group">
+               <input type="password" name="dpassword" id="tpass" placeholder="Create password">
+               <span id="showpass">Show</span>
+             </div>
+
+
+
+
+
+
+                  <div>
+                    <div class="input-group">
+                        <input type="text" name="ddrno" id="ddrno" placeholder="DoorNo"/>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="input-group">
+                        <input type="text" name="dcity" id="dcity" placeholder="City"/>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="input-group">
+                        <input type="text" name="dcountry" id="dcountry" placeholder="Country"/>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="input-group">
+                        <input type="text" name="dzip" id="dzip" placeholder="Zipcode"/>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="input-group">
+                        <label for="ddob">Date of Birth</label>
+                        <input type="date" name="ddob" id="ddob"/>
+                    </div>
+                  </div>
+
+
+
+
+
+
+                  
+                    <div class="input-group">
+                        <input type="text" name="dmaritalstatus" id="dmaritalstatus" placeholder="Marital Status"/>
+                    </div>
+                  
+                    <div class="input-group">
+                        <label for="dphoto">Upload your Photo</label>
+                        <input type="file" name="dphoto" id="dphoto" accept="image/*">
+                    </div>
+                  </div>
+                  
+                 
+    <div>
+      <div class="input-group">
+          <input type="text" name="dspeciality" id="dspeciality" placeholder="Medical Speciality"/>
+      </div>
+    </div>
+
+
+
+
+
+                  
+
+
+
+
+                  <div class="form-type">
+                    <div class="input-group">
+                        <button type="submit" value="REGISTER">REGISTER</button>
+                    </div>
+                  </div>
+            </form>
+        </body>
+        </html>

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dashboard</title>
+    <link rel="stylesheet"
+        href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+
+    <link rel="stylesheet" href='static/syle.css'>
+</head>
+
+<body>
+    <input type='checkbox' id='nav-toggle'>
+    <div class="sidebar">
+        <div class="sidebar-brand">
+            <h1>
+                <span class="lab la-accusoft"></span> 
+                <span>   </span>
+                <!-- <span>Accusoft</span> -->
+            </h1>
+        </div>
+        <div class="sidebar-menu">
+            <ul>
+                <li>
+
+                    <a href="http://127.0.0.1:5000/index" class="active">&nbsp;<span class="las la-igloo">Home</span></a>
+                </li>
+                <li onclick="showSection('section1')">Doctor Details</li>
+                <li onclick="showSection('section2')">Doctor Personal Details</li>
+                <li onclick="showSection('section3')">Edit Doctor Details</li>
+                <li onclick="showSection('section4')">My Schedule</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <header>
+            <h2>
+              <!--  <label for="nav-toggle">
+                    <span class="las la-bars"> </span>
+                </label>
+            -->
+                Wellness Dashboard
+            </h2>
+            <div class="user-wrapper">
+                <div>
+           
+                    <h4>Welcome {{ dname }}</h4>
+                    
+                </div>
+            </div>
+        </header>
+
+        <img src="{{ url_for('static', filename='uploads/' + image_name) }}" alt="Profile Image" width="40px" height="40px">
+
+        <div id="section1" class="section" >
+
+            <div class="container">
+                
+               <div class="profile">
+               <img class="profile-image"  src="static/hp.jpeg" alt="User Photo">
+               </div>
+               <div class="details">
+                     <span class="label">Doctor Name</span>
+                     <span class="value">{{ dname }}</span>
+               </div>
+               <div class="details">
+                     <span class="label">D.O.B</span>
+                     <span class="value">{{ ddob }}</span>
+               </div>
+               <div class="details">
+                     <span class="label">Gender</span>
+                     <span class="value">{{ dgender }}</span>
+               </div>
+               <div class="details">
+                     <span class="label">Email</span>
+                     <span class="value">{{ demail }}</span>
+               </div>
+               <div class="details">
+                     <span class="label">DoorNo</span>
+                     <span class="value">{{ ddoorno }}</span>
+               </div>
+               <div class="details">
+                   <span class="label">City</span>
+                   <span class="value">{{ dcity }}</span>
+               </div>
+               <div class="details">
+                   <span class="label">Country</span>
+                   <span class="value">{{ dcountry }}</span>
+               </div>
+               <div class="details">
+                   <span class="label">Zipcode</span>
+                   <span class="value">{{ dzipcode }}</span>
+               </div>
+               <div class="details">
+                   <span class="label">Phone</span>
+                   <span class="value">{{ dphno }}</span>
+               </div>
+               
+           </div>
+       </div>
+
+
+        </div>
+
+
+    <div id="section2" class="section" >
+
+        <div class="container">
+            
+           <div class="profile">
+           <img class="profile-image"  src="static/hp.jpeg" alt="User Photo">
+           </div>
+           <div class="details">
+                 <span class="label">Email</span>
+                 <span class="value">{{ demailh }}</span>
+           </div>
+           <div class="details">
+                 <span class="label">Height</span>
+                 <span class="value">{{ dheighth }}</span>
+           </div>
+           <div class="details">
+                 <span class="label">Weight</span>
+                 <span class="value">{{ dweighth }}</span>
+           </div>
+           <div class="details">
+               <span class="label">Education Level</span>
+               <span class="value">{{ dedulevelh }}</span>
+           </div>
+           <div class="details">
+               <span class="label">License Number</span>
+               <span class="value">{{ dlicensenumberh }}</span>
+           </div>
+         
+           
+           <div class="details">
+               <span class="label">Experience</span>
+               <span class="value">{{ dexperienceh }}</span>
+           </div>
+   
+           <div class="details">
+               <span class="label">Pre.Institution</span>
+               <span class="value">{{ dpreinstitutionh }}</span>
+           </div>
+           
+        </div>
+        </div>
+            <div class="section" id="section3">
+                <div class="container"><br><br>
+                    <center><h2>EDIT MY PROFILE</h2></center>
+                    <br><br>
+                    <div class="form-container">
+                        <form action="/dcity" method="POST" enctype="multipart/form-data"> 
+                            <label for="m"><span>City</span><span class="val">{{ dcity }}</span></label>
+                            <span class="val4"><input type="text"  name="dcity" id="m"></span>
+                            <span class="val"> <button type="submit" id="editButton">Edit</button></span>
+                        </form>
+                        <form action="/dcountry" method="POST" enctype="multipart/form-data"> 
+                            <label for="m"><span>Country</span><span class="val">{{ dcountry }}</span></label>
+                            <span class="val2"><input type="text"  name="dcountry" id="m"></span>
+                            <span class="val"><button type="submit" id="editButton">Edit</button></span>
+                        </form>
+                        <form action="/dzipcode" method="POST" enctype="multipart/form-data"> 
+                            <label for="m"><span>Zip Code</span><span class="val">{{ dzipcode }}</span></label>
+                            <span class="val4"><input type="text"  name="dzipcode" id="m"></span>
+                            <span class="val"><button type="submit" id="editButton">Edit</button></span>
+                        </form>
+                        <form action="/dphno" method="POST" enctype="multipart/form-data"> 
+                            <label for="m"><span>Phone</span><span class="val">{{ dphno }}</span></label>
+                            <span class="val1"><input type="number"  name="dphno" id="m"></span>
+                            <span class="val"><button type="submit" id="editButton">Edit</button></span>
+                        </form>
+                        
+                    
+                        <form action="/ddoorno" method="POST" enctype="multipart/form-data"> 
+                            <label for="m"> <span>Door</span><span class="val">{{ ddoorno }}</span></label>
+                            <span class="val5"><input type="text"  name="ddoorno" id="m"></span>
+                            <span class="val"> <button type="submit" id="editButton">Edit</button></span>
+                        </form>
+
+                        <br>
+                        <center>
+                            <form action="/deletekaro" method="POST" enctype="multipart/form-data">
+                                <button class="btn" type="submit">Delete Account</button>
+                            </form>
+                        </center>
+                    </div>
+            </div>
+            </div>
+        </div>    
+        <div class="section" id="section4">
+            <div class="container">
+                <br><br>
+                <h1>Appointments Confirmed</h1>
+                <table width="100%">
+                        <thead>
+                          <tr>
+                            <td>Id</td>
+                            <td>pat_name</td>
+                            <td>date</td>
+                            <td>Status</td>
+                            <td>Time</td>
+                          </tr>
+                        </thead>
+                        <tbody> 
+                            {% for appt in dappt %}
+                            <tr>
+                                <td>{{ appt.app_id }}</td>
+                                <td>{{ appt.pat_name }}</td>
+                                <td>{{ appt.app_date }}</td>
+                                <td>{{ appt.status }}</td>
+                                <td>{{ appt.time }}</td>
+                            </tr>
+                            {% endfor %}  
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+               
+                </div>
+        </div>
+    <script>
+        window.onload = function() {
+        var section1 = document.getElementById("section1");
+        if (section1) {
+             section1.style.display = "block";
+        }
+    };
+    function showSection(sectionId) {
+     // Hide all sections
+            var sections = document.getElementsByClassName("section");
+            for (var i = 0; i < sections.length; i++) {
+            sections[i].style.display = "none";
+            sections[i].style.marginTop = "0";
+            
+            }
+     
+            // Show the selected section
+            var section = document.getElementById(sectionId);
+            section.style.display = "block";
+            section.style.marginTop = "0";
+            
+    }
+    </script>
+</body>
+
+</html>

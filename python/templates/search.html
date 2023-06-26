@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+     }
+
+
+h1 {
+    text-align: center;
+}
+
+form {
+    text-align: center;
+    margin-top: 50px;
+}
+
+input[type="text"], input[type="submit"] {
+    padding: 10px;
+    font-size: 16px;
+}
+
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.footer {
+        background-color: #f5f5f5;
+        color: #333;
+        padding: 20px;
+    }
+
+    .footer .row {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin-bottom: 20px;
+    }
+
+    .footer .column {
+        flex-basis: 30%;
+        margin-bottom: 20px;
+    }
+
+    .footer h3 {
+        color: #333;
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .footer p {
+        margin-bottom: 10px;
+    }
+
+    .footer ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .footer ul li {
+        margin-bottom: 5px;
+    }
+
+    .footer a {
+        color: #333;
+        text-decoration: none;
+    }
+
+    .footer input[type="email"] {
+        padding: 5px;
+        width: 70%;
+        margin-right: 10px;
+    }
+
+    .footer button {
+        padding: 5px 10px;
+        background-color: #4CAF50;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+    }
+    .searchresult {
+        background-color: #fff;
+        padding: 20px;
+        margin-top: 20px;
+        border: 1px solid #ccc;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        height:300px;
+    }
+    .searchresult {
+    padding: 20px;
+    background-color: #f2f2f2;
+    border-radius: 5px;
+  }
+
+  /* Styles for the default text */
+  #defaultText {
+    font-style: italic;
+    color: #888;
+  }
+
+  /* Styles for the search results table */
+  #searchResults {
+    margin-top: 20px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+
+  th {
+    background-color: #f2f2f2;
+  }
+
+  tr:hover {
+    background-color: #f5f5f5;
+  }
+  .logo {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+  }
+
+  .con {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 18px;
+  color: white;
+  background-color: #4caf50;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  transition: background-color 0.3s ease;
+}
+
+.con:hover {
+  background-color: #45a049;
+  cursor: pointer;
+}
+
+
+</style>
+
+  
+    <title>Search</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <span class="logo">BubbleCare Corporation
+   &nbsp;&nbsp;&nbsp;
+  <a href="http://127.0.0.1:5000/appointments" class="con">Book Appointments</a>
+  </span>
+  <h1>Search</h1>
+    <form method="POST" action="{{ url_for('search') }}">
+        <input type="text" name="name" placeholder="Doctor Name" id="searchInput"> 
+        <input type="text" name="domain" placeholder="Doctor Domain" id="searchInput">
+        <input type="text" name="location" placeholder="Location" id="searchInput">
+        <input type="submit" value="Search" id="searchButton">
+    </form>
+    
+   <div class="searchresult">
+    <p id="defaultText">Your results appear here</p>
+    <div id="searchResults">
+      <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Domain</th>
+                <th>Location</th>
+                <th>Email</th>
+                <th>PhoneNo</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for doctor in doctors %}
+            <tr>
+                <td>{{ doctor.dname }}</td>
+                <td>{{ doctor.dspeciality }}</td>
+                <td>{{ doctor.dcity }}</td>
+                <td>{{ doctor.demail }}</td>
+                <td>{{ doctor.dphno }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    </div>
+
+   </div>
+
+
+    <footer class="footer">
+
+      <div class="row primary">
+        <div class="column about">
+            <h3>Connect</h3>
+            <p>
+                <i class="fa fa-map-marker" aria-hidden="true"></i> @Bubble  CEG campus,Anna university,Chennai
+            </p>
+            <div class="social">
+                <i class="fa fa-facebook-square"></i>
+                <i class="fa fa-twitter-square"></i>
+                <i class="fa fa-linkedin-square"></i>
+                <i class="fa fa-instagram"></i>
+            </div>
+        </div>
+    
+        <div class="column link">
+            <h3>Links</h3>
+            <ul>
+                <li><a href="#home">Collaborate</a></li>
+                <li><a href="#team">Team</a></li>
+                <li><a href="#vision">Vision</a></li>
+                <li><a href="http://127.0.0.1:5000/index">Home</a></li>
+            </ul>
+        </div>
+    
+        <div class="column subscribe">
+            <h3>Newsletter</h3>
+            <div>
+               <input type="email" placeholder="Your email id here" />
+               <button>Subscribe</button>
+            </div>
+        </div>
+    </div>
+    
+    
+     </footer>
+           
+     
+      
+</body>
+</html>

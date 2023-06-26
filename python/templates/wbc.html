@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>WBC </title>
+  <style>
+    body {
+     
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+            footer {
+              background-color: #f5f5f5;
+              padding: 20px;
+              display: flex;
+              justify-content: space-between;
+              align-items: flex-start;
+            }
+          
+            footer .footer-section {
+              flex: 1;
+              margin-right: 20px;
+            }
+          
+            footer h2{
+              color: #333;
+              font-size: 22px;
+              margin-bottom: 10px;
+              font-family: Arial, sans-serif;
+            }
+          
+            footer p {
+              color: #777;
+              font-size: 16px;
+              line-height: 1.5;
+              margin-bottom: 20px;
+              font-family: Arial, sans-serif;
+            }
+          
+            footer ul.social-media {
+              list-style: none;
+              padding: 0;
+              margin: 0;
+            }
+          
+            footer ul.social-media li {
+              display: inline-block;
+              margin-right: 10px;
+            }
+          
+            footer ul.social-media li a {
+              color: #777;
+              font-size: 16px;
+              text-decoration: none;
+              transition: color 0.3s ease;
+              font-family: Arial, sans-serif;
+            }
+          
+            footer ul.social-media li a:hover {
+              color: #333;
+            }
+          
+            footer p.text-center {
+              text-align: center;
+              color: #777;
+              font-size: 14px;
+              font-family: Arial, sans-serif;
+            }
+    
+    .container {
+      max-width: 800px;
+      margin:  auto;
+	  margin-top:60px;
+      padding: 20px;
+      text-align: center;
+      background-color: #f5f5f5;
+      border: 10px solid black;
+    }
+
+    .header {
+      border-bottom: 2px solid black;
+      padding-bottom: 10px;
+      margin-bottom: 30px;
+    }
+
+    .form-group {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      font-size: 18px;
+      font-weight: bold;
+      margin-right: 10px;
+    }
+
+    .form-group input[type="number"] {
+      width: 200px;
+      height: 30px;
+      border: 2px solid black;
+      font-size: 16px;
+      padding: 5px;
+    }
+
+    .submit-button {
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .submit-button:hover {
+      background-color: #45a049;
+    }
+
+    .back-button {
+      background-color: lightskyblue;
+      border: 5px solid black;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .back-button:hover {
+      background-color: lightblue;
+    }
+	body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .header {
+      background-color: #f5f5f5;
+      border-bottom: 2px solid black;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand-header {
+      display: flex;
+      align-items: center;
+    }
+
+    .brand-logo {
+      font-size: 24px;
+      margin-right: 10px;
+    }
+
+    .brand-name {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .user-header a {
+      text-decoration: none;
+      color: #000;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+	<header class="header">
+		<div class="brand-header">
+		  <div class="brand-logo">
+			<i class="fa-duotone fa-chart-scatter-bubble" style="--fa-primary-color: #57db4d; --fa-secondary-color: #1d60d3;"></i>
+		  </div>
+		  <div class="brand-name">Bubble Health Analysis</div>
+		</div>
+		<div class="user-header"><a href="http://127.0.0.1:5000/index">Go Back</a></div>
+	  </header>
+	
+  <div class="container">
+    <div class="header">
+      <h1>BLOOD PRESSURE LEVEL</h1>
+    </div>
+
+    <form action="/wbc" method="POST" enctype="multipart/form-data">
+      <div class="form-group">
+		
+	<label for="wbc"><h2>WBC COUNT</h2></label>
+	<input type="number" id="wbc" name="wbc" min="0" required>
+      </div>
+
+
+      <div class="form-group">
+        <input type="submit" value="Submit" class="submit-button">
+      </div>
+    </form>
+
+    <div class="back-button">
+      <a href="http://127.0.0.1:5000/button"><h2>BACK</h2></a>
+    </div>
+  </div>
+  <footer>
+	<div class="footer-section">
+	  <h2>About Us</h2>
+		<p>We are committed to helping individuals better understand their health and make informed decisions. With a focus on precision and confidentiality, we strive to provide accurate results and personalized recommendations for optimal well-being.</p>
+	
+	</div>
+	<div class="footer-section">
+	  <h2>Contact Us</h2>
+	  <p>Reach out to us directly at bubblecare@gmail.com for any inquiries, feedback, or to schedule an appointment. We are here to assist you.</p>
+	</div>
+	<div class="footer-section">
+	  <h2>Stay Connected</h2>
+	  <ul class="social-media">
+		<li><a href="[Facebook Page URL]">Facebook</a></li>
+		<li><a href="[Twitter Handle URL]">Twitter</a></li>
+		<li><a href="[Instagram Handle URL]">Instagram</a></li>
+	  </ul>
+	</div>
+  </footer>
+  
+</body>
+</html>
+
+<form action="/wbc" method="POST" enctype="multipart/form-data">
+	<div class="input">
+	<label for="wbc"><h2>WBC COUNT</h2></label>
+	<input type="number" id="wbc" name="wbc" min="0" required>
+</div>
+<br/>
+<div class="input submit">
+<input type="submit" value="submit" name="submit" id="submit">
+</div>
+</form>

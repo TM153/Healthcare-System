@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+    background-image: url(bg.jpg);
+    background-size: cover;
+    background-position: center;
+    padding: 10px;
+}
+
+.form1 {
+    margin: 50px auto;
+    padding: 30px;
+    width: max-content;
+    height: max-content;
+    background-color: white;
+    border-radius: 10px;
+    background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
+}
+
+h1 {
+    padding: 0 0 10px 0;
+    text-align: center;
+    border-bottom: 1px solid #000;
+}
+
+#flex-container label {
+    display: inline-block;
+    width: 150px;
+}
+
+#flex-container input {
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #000;
+    background: transparent;
+    padding: 10px;
+    font-size: 16px;
+}
+
+#flex-container input:focus {
+    border-color: #fff;
+}
+
+.button {
+    width: 100%;
+    background-color: #000;
+    padding: 0.6em;
+    color: #fff;
+    outline: none;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    letter-spacing: 2px;
+}
+
+.button:hover {
+    background-color: #1b1a1a;
+}
+
+/* Hide scroll bar  */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}

@@ -1,0 +1,89 @@
+
+.form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  .radio-buttons label {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  .register-button {
+    background-color: #4CAF50; 
+    border: none; 
+    color: white; 
+    padding: 10px 20px; 
+    text-align: center; 
+    text-decoration: none; 
+    display: inline-block; 
+    font-size: 16px; 
+    cursor: pointer; 
+    border-radius: 4px; 
+  }
+  
+  
+  .form h1 {
+    text-align: center;
+    color: #ef6d6d;
+  }
+  
+  
+  .input-group {
+    margin-bottom: 15px;
+  }
+  .customdrop1
+  {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  .input-group input, .input-group select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  
+  .btns-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+  }
+  
+  .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    background-color: #ef6d6d;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .btn-prev {
+    background-color: #ccc;
+  }
+  
+  
+  #showpass,
+  #showcpass {
+    cursor: pointer;
+    color: #666;
+    font-size: 12px;
+    margin-left: 5px;
+  }
+  
+  
+  @media (max-width: 600px) {
+    .form {
+      max-width: 100%;
+    }
+  }
+  

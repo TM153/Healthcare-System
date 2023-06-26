@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        #searchResults {
+            margin: 20px;
+            height:400px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        form {
+            display: inline-block;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+    button:hover {
+            background-color: #45a049;
+        }
+    header {
+      background-color: #f7f7f7;
+      padding: 20px;
+    }
+    
+    .container {
+      max-width: 100%;
+      margin: 0 auto;
+    }
+    
+    .nav-menu {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .nav-menu li {
+      display: inline-block;
+      margin-right: 40px;
+    }
+    
+    .nav-menu li:first-child {
+      margin-left: 0px; /* Adjust the value to increase/decrease spacing */
+    }
+    
+    .nav-menu li:last-child {
+      margin-right: 0;
+    }
+    
+    .nav-menu a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    
+    .nav-menu a:hover {
+      color: #666;
+    }
+    .footer {
+        background-color: #f5f5f5;
+        color: #333;
+        padding: 20px;
+    }
+
+    .footer .row {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin-bottom: 20px;
+    }
+
+    .footer .column {
+        flex-basis: 30%;
+        margin-bottom: 20px;
+    }
+
+    .footer h3 {
+        color: #333;
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .footer p {
+        margin-bottom: 10px;
+    }
+
+    .footer ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .footer ul li {
+        margin-bottom: 5px;
+    }
+
+    .footer a {
+        color: #333;
+        text-decoration: none;
+    }
+
+    .footer input[type="email"] {
+        padding: 5px;
+        width: 70%;
+        margin-right: 10px;
+    }
+
+    .footer button {
+        padding: 5px 10px;
+        background-color: #4CAF50;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+    }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+    <header>
+          <ul class="nav-menu">
+            <li><a href="http://127.0.0.1:5000/index">Home</a></li>
+            <li><a href="http://127.0.0.1:5000/dprofile1">Profile</a></li>
+            <li><a href="#">Feedback</a></li>
+          </ul>
+      </header>
+      </div>
+    <center><h1 >View My Appointments</h1></center>
+    <div id="searchResults">
+        <table>
+            <thead>
+                <tr>
+                    <th>PatientName</th>
+                    <th>DoctorName</th>
+                    
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>ID</th>
+                   
+                    
+                </tr>
+            </thead>
+            <tbody>
+                {% for amt in amts %}
+                <tr>
+                    <td>{{ amt.pat_name }}</td>
+                    <td>{{ amt.doc_name }}</td>
+                    
+                    <td>{{ amt.app_date }} </td>
+                    <td>{{ amt.time }}</td>
+                    <td>{{ amt.app_id }}</td>
+                    
+                 
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <footer class="footer">
+
+        <div class="row primary">
+          <div class="column about">
+              <h3>Connect</h3>
+              <p>
+                  <i class="fa fa-map-marker" aria-hidden="true"></i> @Bubble  CEG campus,Anna university,Chennai
+              </p>
+              <div class="social">
+                  <i class="fa fa-facebook-square"></i>
+                  <i class="fa fa-twitter-square"></i>
+                  <i class="fa fa-linkedin-square"></i>
+                  <i class="fa fa-instagram"></i>
+              </div>
+          </div>
+      
+          <div class="column link">
+              <h3>Links</h3>
+              <ul>
+                  <li><a href="#home">Collaborate</a></li>
+                  <li><a href="#team">Team</a></li>
+                  <li><a href="#vision">Vision</a></li>
+                  <li><a href="http://127.0.0.1:5000/index">Home</a></li>
+              </ul>
+          </div>
+      
+          <div class="column subscribe">
+              <h3>Newsletter</h3>
+              <div>
+                 <input type="email" placeholder="Your email id here" />
+                 <button>Subscribe</button>
+              </div>
+          </div>
+      </div>
+      
+      
+       </footer>
+</body>
+</html>

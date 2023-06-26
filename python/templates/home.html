@@ -1,0 +1,56 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthcare Management System</title>
+    <link
+      rel="stylesheet"
+      href="../static/style1.css"
+    />
+  </head>
+  <body>
+    <div class="form1">
+      <form method="POST" enctype="multipart/form-data" action="http://127.0.0.1:5000/predict">
+        <h1>Diabetes Detection</h1>
+        <br />
+        <div id="flex-container">
+          <b>
+            <label>No of Pregencies:</label>
+            <input type="number" name="a" placeholder="enter" /> <br /><br />
+            <label>Glucose : </label>
+            <input type="number" name="b" placeholder="enter" />
+            <br /><br />
+            <label>BP :</label>
+            <input type="number" name="c" placeholder="enter" step="0.01" />
+            <br /><br />
+            <label>Insulin:</label>
+            <input type="number" name="e" placeholder="enter" step="0.01" />
+            <br /><br />
+            <label>BMI:</label>
+            <input type="number" name="f" placeholder="enter" step="0.01" />
+            <br />
+            <br />
+            <label>DPF: </label><br>
+            <label>Generation 1</label>
+            <input type="number" name="x" placeholder="enter" step="1" />
+            <br />
+            <label>Generation 2</label>
+            <input type="number" name="y" placeholder="enter" step="1" />
+            <br />
+            <label>Generation 3</label>
+            <input type="number" name="z" placeholder="enter" step="1" />
+            <br />
+
+
+            <br />
+            <label>AGE:</label>
+            <input type="number" name="h" placeholder="enter" /> <br />
+            <br />
+          </b>
+          <input type="submit" , value='predict!' >
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

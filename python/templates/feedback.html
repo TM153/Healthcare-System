@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>FEEDBACK</title>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="theme-color" content="rgb(11, 78, 179)">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="../i/f/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+  <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="static/feedback.css">
+
+</head>
+
+<body>
+	<header>
+		<div class="brand-header">
+			<div class="brand-logo"><i class="fa-duotone fa-chart-scatter-bubble"
+					style="--fa-primary-color: #57db4d; --fa-secondary-color: #1d60d3;"></i></div>
+			<div class="brand-name">Bubble Health Analysis</div>
+		</div>
+		<div class="user-header"><a href="http://127.0.0.1:5000/index">Go Back</a></div>
+	</header>
+	<br><br>
+  <div class="page">
+    <div class="feed">
+      <h1>POST FEEDBACK</h1>
+    </div>
+
+    <div class="form">
+      <form action="/feedback" method="POST">
+        <label for="first-dropdown">CATEGORY</label><br>
+        <select id="first-dropdown" name="option" onchange="category()" required>
+          <option value="none" selected disabled>Select a category</option>
+          <option value="Doctor">Doctor</option>
+          <option value="Health Assessment">Health Assessment</option>
+          <option value="Appointment">Appointment</option>
+          <option value="Website">Website</option>
+          <option value="Others">Others</option>
+        </select>
+            <br>
+        <div id="s-dropdown" style="display:none;"><br>
+          <label for="second-dropdown">SPECIALIZED FIELD</label>
+          <select id="second-dropdown" name="field" onchange="speciality()"></select>
+        </div>
+
+        <div id="t-dropdown" style="display:none;">
+          <label for="third-dropdown">DOCTOR NAME</label>
+          <select id="third-dropdown" name="docname"></select>
+        </div>
+        <br>
+        <label for="content">YOUR FEEDBACK</label>
+        <textarea id="content" name="ucontent" placeholder="Write a review" required></textarea>
+
+        <div class="submit">
+          <input type="submit" name="submit" id="submit" value="Submit" />
+        </div>
+      </form>
+    </div>
+
+    <div class="back-button">
+      {% if count == 'pat' %}
+      <a href="http://127.0.0.1:5000/profile">BACK</a>
+      {% elif count == 'doc' %}
+      <a href="http://127.0.0.1:5000/dprofile1">BACK</a>
+      {% endif %}
+    </div>
+  </div><br><br>
+  <footer>
+	<div class="footer-section">
+	  <h2>About Us</h2>
+		<p>We are committed to helping individuals better understand their health and make informed decisions. With a focus on precision and confidentiality, we strive to provide accurate results and personalized recommendations for optimal well-being.</p>
+	
+	</div>
+	<div class="footer-section">
+	  <h2>Contact Us</h2>
+	  <p>Reach out to us directly at bubblecare@gmail.com for any inquiries, feedback, or to schedule an appointment. We are here to assist you.</p>
+	</div>
+	<div class="footer-section">
+	  <h2>Stay Connected</h2>
+	  <ul class="social-media">
+		<li><a href="[Facebook Page URL]">Facebook</a></li>
+		<li><a href="[Twitter Handle URL]">Twitter</a></li>
+		<li><a href="[Instagram Handle URL]">Instagram</a></li>
+	  </ul>
+	</div>
+  </footer>
+  
+  <script>
+    function category() {
+      toggleSecondDropdown();
+      fetchSecondDropdownData();
+    }
+
+    function fetchSecondDropdownData() {
+      var selectedTable = document.getElementById('first-dropdown').value;
+
+      if (selectedTable == 'Doctor') {
+        // Send an AJAX request to the Flask route
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', '/get_data1?selected_table=' + encodeURIComponent(selectedTable), true);
+        xhr.onreadystatechange = function () {
+          if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+            var data = JSON.parse(xhr.responseText);
+            var secondDropdown = document.getElementById('second-dropdown');
+            secondDropdown.innerHTML = '';
+
+            // Populate the options in the second dropdown
+            for (var i = 0; i < data.length; i++) {
+              var option = document.createElement('option');
+              option.textContent = data[i];
+              option.value = data[i];
+              secondDropdown.appendChild(option);
+            }
+          }
+        };
+        xhr.send();
+      }
+    }
+
+    function toggleSecondDropdown() {
+      var firstDropdown = document.getElementById('first-dropdown');
+      var secondDropdown = document.getElementById('s-dropdown');
+      var thirdDropdown = document.getElementById('t-dropdown');
+
+      // Check the selected option in the first dropdown
+      var selectedOption = firstDropdown.options[firstDropdown.selectedIndex].value;
+
+      // Toggle the visibility of the second dropdown
+      if (selectedOption === 'Doctor') {
+        secondDropdown.style.display = 'block'; // Show the second dropdown
+      } else {
+        secondDropdown.style.display = 'none';
+        thirdDropdown.style.display = 'none';
+        // Hide the second and third dropdown
+      }
+    }
+
+    function speciality() {
+      toggleThirdDropdown();
+      fetchThirdDropdownData();
+    }
+
+    function fetchThirdDropdownData() {
+      var selectedValue = document.getElementById('second-dropdown').value;
+      var secondDropdown = document.getElementById('third-dropdown');
+
+      // Clear existing options
+      secondDropdown.innerHTML = '';
+
+      // Send an AJAX request to fetch the attribute values
+      fetch(`/get_data2/${selectedValue}`)
+        .then(response => response.json())
+        .then(data => {
+          // Iterate over the attribute values and create dropdown options
+          data.forEach(attributeValue => {
+            var option = document.createElement('option');
+            option.text = attributeValue;
+            option.value = attributeValue;
+            secondDropdown.appendChild(option);
+          });
+        })
+        .catch(error => {
+          console.log('Error:', error);
+        });
+    }
+
+    function toggleThirdDropdown() {
+      var firstDropdown = document.getElementById('second-dropdown');
+      var secondDropdown = document.getElementById('t-dropdown');
+      var category = document.getElementById('first-dropdown');
+
+      // Check the selected option in the first dropdown
+      var selectedOption = firstDropdown.options[firstDropdown.selectedIndex].value;
+
+      // Toggle the visibility of the second dropdown
+      secondDropdown.style.display = 'block'; // Show the second dropdown
+    }
+  </script>
+</body>
+
+</html>

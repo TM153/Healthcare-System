@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Appointment Form</title>
+  <link rel="stylesheet" href="static/appstyle.css">
+</head>
+<body bgcolor="#239f85">
+  <header>
+		<div class="brand-header">
+			<div class="brand-logo"><i class="fa-duotone fa-chart-scatter-bubble"
+					style="--fa-primary-color: #57db4d; --fa-secondary-color: #1d60d3;"></i></div>
+			<div class="brand-name">Bubble Health Analysis</div>
+      <div class="brand-name" id="hd">Schedule Your Slot</div>
+		</div>
+		<div class="user-header"><a href="http://127.0.0.1:5000/index">Go Back</a></div>
+	</header>
+	<br><br>
+
+
+  
+  <form id="appointmentForm" action="/appointments" method="POST" enctype="multipart/form-data">
+    <label for="domain">Domain:</label>
+    <select id="domain" name="domain" required>
+      <option value="">Select a domain</option>
+      <option value="cardio">Cardiologist</option>
+      <option value="neuro">Neurologist</option>
+      <option value="pulmo">Pulmonologist</option>
+      <option value="dermato">Dermatologist</option>
+      <option value="opthal">Ophthalmologist</option>
+      <option value="pedia">Pediatrician</option>
+    </select>
+
+    <label for="doctor">Doctor:</label>
+    <select id="doctor" name="doctor" required>
+      <option value="">Select a doctor</option>
+    </select>
+
+    <label for="date">Date:</label>
+    <input type="text" id="date" name="date" required>
+
+    <label for="time">Time:</label>
+    <select id="time" name="time" required>
+      <option value="9:00AM">9:00AM</option>
+      <option value="10:00AM">10:00AM</option>
+      <option value="2:00PM">2:00PM</option>
+      <option value="3:00PM">3:00PM</option>
+    </select>
+    <br><br>
+    <input type="submit" value="Submit">
+    <button id="viewScheduleButton" class="btn" onclick="opensc()">View My Schedule</button>
+  </form> 
+</div><br>
+<footer>
+	<div class="footer-section">
+	  <h2>About Us</h2>
+		<p>We are committed to helping individuals better understand their health and make informed decisions. With a focus on precision and confidentiality, we strive to provide accurate results and personalized recommendations for optimal well-being.</p>
+	
+	</div>
+	<div class="footer-section">
+	  <h2>Contact Us</h2>
+	  <p>Reach out to us directly at bubblecare@gmail.com for any inquiries, feedback, or to schedule an appointment. We are here to assist you.</p>
+	</div>
+	<div class="footer-section">
+	  <h2>Stay Connected</h2>
+	  <ul class="social-media">
+		<li><a href="[Facebook Page URL]">Facebook</a></li>
+		<li><a href="[Twitter Handle URL]">Twitter</a></li>
+		<li><a href="[Instagram Handle URL]">Instagram</a></li>
+	  </ul>
+	</div>
+  </footer>
+  
+  
+<script>
+  
+const doctorsByDomain = {
+  cardio: ["John Doe"],
+  neuro: ["Emily Davis"],
+  pulmo: ["Jane Smith"],
+  dermato:["Michael Wilson"],
+  opthal:["Robert Johnson"],
+  pedia:["Sarah Thompson"]
+};
+
+
+function updateDoctorsOptions() {
+  const domainSelect = document.getElementById("domain");
+  const doctorSelect = document.getElementById("doctor");
+  const selectedDomain = domainSelect.value;
+  const doctors = doctorsByDomain[selectedDomain] || [];
+
+  
+  doctorSelect.innerHTML = '<option value="">Select a doctor</option>';
+
+  
+  doctors.forEach(doctor => {
+    const option = document.createElement("option");
+    option.value = doctor;
+    option.text = doctor;
+    doctorSelect.appendChild(option);
+  });
+}
+
+
+const domainSelect = document.getElementById("domain");
+domainSelect.addEventListener("change", updateDoctorsOptions);
+
+
+updateDoctorsOptions();
+
+    document.getElementById("viewScheduleButton").addEventListener("click", function() {
+        var searchResultsDiv = document.getElementById("searchResults");
+        if (searchResultsDiv.style.display === "none") {
+            searchResultsDiv.style.display = "block";
+        } else {
+            searchResultsDiv.style.display = "none";
+        }
+    });
+    function opensc() {
+            window.location.href = "http://127.0.0.1:5000/schedule";
+           
+        }
+</script>
+</body>
+</html>

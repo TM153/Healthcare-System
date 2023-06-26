@@ -1,0 +1,141 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <link rel="stylesheet" href="static/register1.css">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   
+    <meta name="theme-color" content="rgb(11, 78, 179)">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="../i/f/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>One Step Process</title>
+    <style>
+      
+    </style>
+  </head>
+
+  <body>
+    <form action="/userregister1" class="form" method="POST" enctype="multipart/form-data">
+      
+      <h1 class="text-center">Register  <span style="color: #ef6d6d">with us</span></h1>
+      
+
+
+      <!-- Steps -->
+
+      <!-- 1 -->
+      <div class="form-step form-step-active">
+        <div class="input-group">
+          <input type="text" name="uname" id="tname" placeholder="username" />
+        </div>
+        <div class="input-group">
+          <input type="email" name="umail" id="tmail" placeholder="Email"/>
+        </div>
+        <div class="input-group">
+          <input type="number" name="uphone" placeholder="Contact number (+91)" id="tmobile"/>
+        </div>
+      <div class="input-group">
+        <select id="tgender" name="ugender" class="customdrop1">
+            <option value="">-Select Gender-</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Transgender">Transgender</option>
+        </select>
+      </div>
+      
+
+        <div class="input-group">
+          <input type="password" name="upass" id="tpass" placeholder="Create password">
+          <span id="showpass">Show</span>
+        </div>
+
+        <div class="input-group">
+          <input type="password" name="ucpass" id="cpass" placeholder="Confirm password"/>
+          <span id="showcpass">Show</span>
+        </div>
+
+
+
+      <!-- 2 -->
+
+      <div class="form-step">
+        <div class="input-group">
+          <input type="number" name="ustno" placeholder="DoorNo" id="tmobile"/>
+        </div>
+        <div class="input-group">
+           <input type="text" name="ucity" placeholder="City" id="tmobile"/>
+        </div>
+        <div class="input-group">
+           <input type="text" name="ucountry" placeholder="Country" id="tmobile"/>
+        </div>
+        <div class="input-group">
+           <input type="text" name="uzip" placeholder="zipcode" id="tmobile"/>
+        </div>
+        <div class="input-group">
+          <label for="tdob">Date of Birth</label>
+          <input type="date" name="udob" id="tdob"/>
+        </div>
+      </div>
+
+
+
+      <!-- 3 -->
+      <div class="form-step">
+        <div class="input-group">
+          <input type="text" name="uoccupation" id="tmobile" placeholder="Enter Your Occupation" />
+        </div>
+        <div class="input-group">
+          <input type="text" name="ustatus" id="tmobile" placeholder="Marital Status" list="statusdrop" />
+          
+        </div>
+        <div class="input-group">
+          <input type="text" name="pemergencyname" id="trecentcourse" placeholder="Emergency Contact Name">
+          
+          </div>
+          <div class="input-group">
+            <input type="number" name="pemergencynumber" id="tuniv" placeholder="Emergency Contact Number" />
+          </div>
+
+        <div class="input-group">
+           <label for="pic" >Upload Your Photo</label>
+           <input type="file" name="upic" accept="image/*" id="pic">
+        </div>
+
+
+        </div>
+
+      </div>
+
+
+      <!-- 4 -->
+
+      <div class="form-step">
+        <div class="input-group">
+          <input type="text" name="uedulevel" id="tmobile" placeholder="Enter your education level" list="statusdrop" />
+        </div>
+      
+      </div>
+
+      <!-- 5 -->
+
+      <div class="form-step">
+      
+        <div class="btns-group">
+          
+          <button type="submit" class="register-button">Register</button>
+
+          
+        </div>
+      </div>
+
+
+    </form>
+  </body>
+
+</html>

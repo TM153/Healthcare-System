@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Analysis Bubble</title>
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.4.0/css/all.css">
+    <link rel="stylesheet" href="static/analysis.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+        <style>
+            /* Footer Styles */
+            footer {
+              background-color: #f5f5f5;
+              padding: 20px;
+              display: flex;
+              justify-content: space-between;
+              align-items: flex-start;
+            }
+          
+            footer .footer-section {
+              flex: 1;
+              margin-right: 20px;
+            }
+          
+            footer h2{
+              color: #333;
+              font-size: 22px;
+              margin-bottom: 10px;
+              font-family: Arial, sans-serif;
+            }
+          
+            footer p {
+              color: #777;
+              font-size: 16px;
+              line-height: 1.5;
+              margin-bottom: 20px;
+              font-family: Arial, sans-serif;
+            }
+          
+            footer ul.social-media {
+              list-style: none;
+              padding: 0;
+              margin: 0;
+            }
+          
+            footer ul.social-media li {
+              display: inline-block;
+              margin-right: 10px;
+            }
+          
+            footer ul.social-media li a {
+              color: #777;
+              font-size: 16px;
+              text-decoration: none;
+              transition: color 0.3s ease;
+              font-family: Arial, sans-serif;
+            }
+          
+            footer ul.social-media li a:hover {
+              color: #333;
+            }
+          
+            footer p.text-center {
+              text-align: center;
+              color: #777;
+              font-size: 14px;
+              font-family: Arial, sans-serif;
+            }
+          </style>
+             
+</head>
+
+<body>
+    <main>
+        <header>
+            <div class="brand-header">
+                <div class="brand-logo"><i class="fa-duotone fa-chart-scatter-bubble"
+                        style="--fa-primary-color: #57db4d; --fa-secondary-color: #1d60d3;"></i></div>
+                <div class="brand-name">Bubble Health Analysis</div>
+            </div>
+            <div class="user-header"><a href="http://127.0.0.1:5000/index">Go Back</a></div>
+        </header>
+
+        <div class="services">
+            <p class="service-text">Get your Analysis done by our professional tools.</p>
+
+            <div class="grid-container">
+                <div class="grid-item" style="background-image: url(static/bp.jpg);">
+                    <a href="#">
+                        <button class="form-button" onclick="openbp()">
+                            <span style="margin: auto;display: block;">Blood Pressure</span>
+                        </button>
+                    </a>
+                </div>
+                <div class="grid-item" style="background-image: url(static/bs.jpg);">
+                    <a href="#">
+                        <button class="form-button" onclick="openbs()">
+                            <span style="margin: auto;display: block;">Blood Sugar</span>
+                        </button>
+                    </a>
+                </div>
+                <div class="grid-item" style="background-image: url(static/bc.jpg);">
+                    <a href="#">
+                        <button class="form-button" onclick="openbc()">
+                            <span style="margin: auto;display: block;">Blood Cholesterol</span>
+                        </button>
+                    </a>
+                </div>
+                <div class="grid-item" style="background-image: url(static/bmi.png);">
+                    <a href="#">
+                        <button class="form-button" onclick="openbmi()">
+                            <span style="margin: auto;display: block;">BMI</span>
+                        </button>
+                    </a>
+                </div>
+                <div class="grid-item" style="background-image: url(static/rr.jpg);">
+                    <a href="#">
+                        <button class="form-button" onclick="openrr()">
+                            <span style="margin: auto;display: block;">Respiratory Rate</span>
+                        </button>
+                    </a>
+                </div>
+                <div class="grid-item" style="background-image: url(static/rbc.jpg);">
+                    <a href="#">
+                        <button class="form-button" onclick="openrbc()">
+                            <span style="margin: auto;display: block;">Red Blood Cells</span>
+                        </button>
+                    </a>
+                </div>
+                <div class="grid-item" style="background-image: url(static/wbc.jpg);">
+                    <a href="#">
+                        <button class="form-button" onclick="openwbc()">
+                            <span style="margin: auto;display: block;">White Blood Cells</span>
+                        </button>
+                    </a>
+                </div>
+                <div class="grid-item" style="background-image: url(static/pl.jpg);">
+                    <a href="#">
+                        <button class="form-button" onclick="openplat()">
+                            <span style="margin: auto;display: block;">Platelets</span>
+                        </button>
+                    </a>
+                </div>
+                
+            </div>
+
+            
+        </div>
+    </main>
+    <footer>
+        <div class="footer-section">
+          <h2>About Us</h2>
+            <p>We are committed to helping individuals better understand their health and make informed decisions. With a focus on precision and confidentiality, we strive to provide accurate results and personalized recommendations for optimal well-being.</p>
+        
+        </div>
+        <div class="footer-section">
+          <h2>Contact Us</h2>
+          <p>Reach out to us directly at bubblecare@gmail.com for any inquiries, feedback, or to schedule an appointment. We are here to assist you.</p>
+        </div>
+        <div class="footer-section">
+          <h2>Stay Connected</h2>
+          <ul class="social-media">
+            <li><a href="[Facebook Page URL]">Facebook</a></li>
+            <li><a href="[Twitter Handle URL]">Twitter</a></li>
+            <li><a href="[Instagram Handle URL]">Instagram</a></li>
+          </ul>
+        </div>
+      </footer>
+      
+      
+    <script>
+        function openbp() {
+            window.location.href = "http://127.0.0.1:5000/bp";
+           
+        }
+        function openbs(){
+            window.location.href = "http://127.0.0.1:5000/bs";
+           
+        }
+        function openbc(){
+            window.location.href = "http://127.0.0.1:5000/bc";
+            
+        }
+        function openbmi(){
+            window.location.href = "http://127.0.0.1:5000/bmi";
+             
+        }
+         function openrr(){
+            window.location.href = "http://127.0.0.1:5000/rr";
+         }
+         function openrbc(){
+            window.location.href = "http://127.0.0.1:5000/rbc";
+           
+         }
+         function openwbc(){
+            window.location.href = "http://127.0.0.1:5000/wbc";
+             
+         }
+         function openplat(){
+            window.location.href = "http://127.0.0.1:5000/plat";
+           
+         }
+         
+        </script>
+    
+</body>
+
+</html>
