@@ -27,11 +27,7 @@ This project aims to develop a comprehensive platform that facilitates appointme
 
 ## GUI
 
-![parameters_page](https://github.com/TM153/Healthcare-System/blob/master/Images/parameters_page.png)
 
-![form_sample](https://github.com/TM153/Healthcare-System/blob/master/Images/form_sample.png)
 
-![report_sample](https://github.com/TM153/Healthcare-System/blob/master/Images/report_sample.png)
 
-![feedback_form](https://github.com/TM153/Healthcare-System/blob/master/Images/feedback_form.png)
 
