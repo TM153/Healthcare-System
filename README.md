@@ -27,6 +27,7 @@ This project aims to develop a comprehensive platform that facilitates appointme
 
 ## GUI
 
+
 ![parameters_page](Images/parameters_page.png)
 
 ![form_sample](Images/form_sample.png)
